@@ -30,5 +30,11 @@ namespace EasyTools {
 			}
 			std::cout << std::endl;
 		}
+		void printAddress(int* ptr) {
+			if (ptr != nullptr) {
+				// Печатаем сам адрес (где лежит) и значение (что лежит)
+				std::cout << "Адрес в памяти: " << ptr << " | Значение: " << *ptr << std::endl;
+			}
+		}
 	}
 }
