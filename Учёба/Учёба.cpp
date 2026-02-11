@@ -1,34 +1,13 @@
 #include "MyTools.h"
 #include <iostream>
 
-namespace EasyTools {
+using namespace std;
 
-	namespace Math {
-		int getSum(int start, int end) {
-			int total = 0;
-			for (int i = start; i <= end; i++) {
-				total += i;
-			}
-			return total;
-		}
+int main() {
 
-		double getFinalPrice(double price, double discount) {
-			if (discount > 100) discount = 100;
-			return price * (1 - discount / 100);
-		}
-	}
+	int myNumbers[] = { 10, 20, 30, 40, 50 };
+	// Передаем сам массив (это и есть адрес) и его размер
+	int total = EasyTools::Math::sumArray(myNumbers, 5);
 
-	namespace Print {
-		void printNumber(int limit, bool evenOnly) {
-			for (int i = 0; i <= limit; i++) {
-				if (evenOnly) {
-					if (i % 2 == 0) std::cout << i << " ";
-				}
-				else {
-					if (i % 2 != 0) std::cout << i << " ";
-				}
-			}
-			std::cout << std::endl;
-		}
-	}
+	cout << "Сумма массива: " << total << endl;
 }

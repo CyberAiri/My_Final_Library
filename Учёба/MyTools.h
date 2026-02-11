@@ -5,6 +5,7 @@ namespace EasyTools {
 	namespace Math {
 		int getSum(int start, int end);
 		double getFinalPrice(double price, double discount);
+		int sumArray(int* arr, int size);
 	}
 
 	// Под-коробка для вывода данных
