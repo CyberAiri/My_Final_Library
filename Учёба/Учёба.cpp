@@ -1,13 +1,30 @@
-#include "MyTools.h"
 #include <iostream>
+#include <cstdlib>
+
 
 using namespace std;
 
-int main() {
 
-	int myNumbers[] = { 10, 20, 30, 40, 50 };
-	// Передаем сам массив (это и есть адрес) и его размер
-	int total = EasyTools::Math::sumArray(myNumbers, 5);
+bool isCompatible(int version) {
+	if (version == 10) {
+		return true;
+	}
+	return false;
+}
 
-	cout << "Сумма массива: " << total << endl;
+int main(int argc, char* argv[]) {
+
+	if (argc < 2) {
+		cout << "Ошибка: Требуется указать версию!" << endl;
+		cout << "Пример использования: " << argv[0] << " <версия>" << endl;
+		return 1;
+	}
+
+
+	int targetVersion = atoi(argv[1]);
+
+
+	cout << isCompatible(targetVersion) << endl;
+
+	return 0;
 }
